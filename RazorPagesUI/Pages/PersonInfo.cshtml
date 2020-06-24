@@ -1,0 +1,15 @@
+﻿@page
+@model RazorPagesUI.Pages.AddPersonInfo
+@{
+    ViewData["Title"] = "Person Info";
+}
+
+<h1>Person Info</h1>
+<form method="post">
+    <input type="text" asp-for="PersonInfo.FirstName" placeholder="First Name" />
+    <input type="text" asp-for="PersonInfo.MiddleName" placeholder="Middle Name" />
+    <input type="text" asp-for="PersonInfo.LastName" placeholder="Last Name" />
+    <input type="text" asp-for="PersonInfo.DOB" placeholder="Date of Birth" />
+    <button type="submit">Submit</button>
+</form>
+
