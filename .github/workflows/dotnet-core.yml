@@ -32,6 +32,7 @@ jobs:
       with:
         # Name of the Azure Web App
         app-name: 'RazorPagesUI20200625121244'
+        slot-name: dev
       # Azure logout 
     - name: logout
       run: |
