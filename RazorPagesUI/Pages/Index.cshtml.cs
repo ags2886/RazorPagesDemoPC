@@ -30,7 +30,7 @@ namespace RazorPagesUI.Pages
 
             if (string.IsNullOrWhiteSpace(City))
             {
-                City = "The Web";
+                City = "The GitHub";
             }
 
         }
