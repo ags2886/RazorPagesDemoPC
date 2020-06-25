@@ -12,5 +12,6 @@
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
+    <NameOfLastUsedPublishProfile>RazorPagesUI20200625121244 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
