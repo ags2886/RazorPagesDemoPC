@@ -1,0 +1,46 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  AZURE_WEBAPP_NAME: RazorPagesUI202006261310
+  AZURE_WEBAPP_PATH: '.'
+  DOTNET_VERSION: '3.1.101'    
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Azure Login via Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}        
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Build
+      run: dotnet build --configuration Release 
+
+    - name: Publish
+      run: dotnet publish --configuration Release -o '${{ env.AZURE_WEBAPP_PATH }}/myapp'
+    
+    - name: Azure WebApp
+      uses: Azure/webapps-deploy@v2
+      with:
+        # Name of the Azure Web App
+        app-name: ${{ env.AZURE_WEBAPP_NAME}}
+        #slot-name: dev
+        package: ${{ env.AZURE_WEBAPP_PATH }}/myapp
+      
+     
